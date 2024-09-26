@@ -1,0 +1,126 @@
+/* Basic styling for the body */
+body {
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Container styling */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Header styling */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Add Todo form styling */
+.add-todo {
+    margin-bottom: 20px;
+}
+
+.add-todo h3 {
+    color: #666;
+}
+
+.add-todo form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.add-todo input,
+.add-todo textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.add-todo button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-todo button:hover {
+    background-color: #45a049;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f2f2f2;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+/* Buttons inside the table */
+button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+}
+.done-btn{
+    background-color: #45a049;
+}
+
+.done-btn:hover {
+    background-color: #4CAF50;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+.action{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.profile-icon {
+    margin-right: 20px;
+    font-size: 20px; /* Adjust size of the icon */
+    color: #333;
+    text-decoration: none; /* Remove underline */
+}
+
+.profile-icon:hover {
+    color: #333;
+}
