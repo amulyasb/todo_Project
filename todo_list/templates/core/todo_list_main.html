@@ -76,6 +76,8 @@
                     <th>Title</th>
                     <th>Description</th>
                     <th>Completed</th>
+                    <th>Date</th>
+                    <th>Completed Date</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -93,10 +95,14 @@
                             {% endif %}
                         </button>
                     </td>
+                    <td>{{todo.created_at}}</td>
+                    <td>{{todo.completed_at}}</td>
                     <td class="action">
                         <form method="POST" action="{% url 'done_todo' todo.id %}"  style="display:inline;">
                             {% csrf_token %}
+                            {% if not todo.completed %}
                             <button type="submit" class="done-btn">Done</button>
+                            {% endif %}
                         </form>
                         <form method="POST" action="{% url 'delete_todo' todo.id %}" style="display:inline;">
                             {% csrf_token %}
@@ -106,7 +112,7 @@
                 </tr>
                 {% empty %}
                 <tr>
-                    <td colspan="4">No todos available.</td>
+                    <td colspan="6">No todos available.</td>
                 </tr>
                 {% endfor %}
             </tbody>

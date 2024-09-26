@@ -4,6 +4,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from todo_list.models import todo
+from django.utils import timezone
+
 
 # Create your views here.
 def user_register(request):
@@ -81,9 +83,11 @@ def done_todo(request, todo_id):
     todo_item = todo.objects.get(id=todo_id, user=request.user)
 
     if request.method == "POST":
-        todo_item.completed = True
-        todo_item.save()
-        return redirect('todo_list_main')
+        if not todo_item.completed:
+            todo_item.completed = True
+            todo_item.completed_at = timezone.now()
+            todo_item.save()
+            return redirect('todo_list_main')
     return redirect('todo_list_main')
 
 
